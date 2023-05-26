@@ -54,6 +54,11 @@ module.exports = {
                 description: "Average Combat Score",
                 type: 4,
             },
+            {
+                name: "position",
+                description: "Current player position",
+                type: 3,
+            },
         ],
         /**
          *
@@ -86,6 +91,8 @@ module.exports = {
 
             const acs = args.find((a) => a.name === "acs") ? args.find((a) => a.name === "acs").value : playerData.acs;
 
+            const position = args.find((a) => a.name === "position") ? args.find((a) => a.name === "position").value : playerData.position;
+
             await PlayerdConfig.findOneAndUpdate({ playerId: user }, {
                 ign: ign,
                 name: name,
@@ -93,7 +100,8 @@ module.exports = {
                 agent1: agent1,
                 agent2: agent2,
                 agent3: agent3,
-                acs: acs
+                acs: acs,
+                position: position
             });
 
             return interaction.reply(`Update Successpuffy`).catch((err) => { client.error(err) });

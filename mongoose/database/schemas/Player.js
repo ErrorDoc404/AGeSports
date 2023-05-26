@@ -33,6 +33,10 @@ const PlayerSchema = new mongoose.Schema({
     acs: {
         type: mongoose.SchemaTypes.Number,
         require: false,
+    },
+    position: {
+        type: mongoose.SchemaTypes.String,
+        require: false,
     }
 });
 

@@ -1,5 +1,5 @@
 require('dotenv').config();
-// require('./Auth');
+require('./Auth');
 const path = require('path');
 const { static, Router } = require("express");
 const api = Router();
